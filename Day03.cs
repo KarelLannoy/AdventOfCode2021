@@ -58,17 +58,5 @@ namespace AdventOfCode2021
             }
             Console.WriteLine(Convert.ToInt32(oxygenList[0], 2) * Convert.ToInt32(co2List[0], 2));
         }
-        //private static string XorBins(string bin1, string bin2)
-        //{
-        //    int len = Math.Max(bin1.Length, bin2.Length);
-        //    string res = "";
-        //    bin1 = bin1.PadLeft(len, '0');
-        //    bin2 = bin2.PadLeft(len, '0');
-
-        //    for (int i = 0; i < len; i++)
-        //        res += bin1[i] == bin2[i] ? '0' : '1';
-
-        //    return res;
-        //}
     }
 }
