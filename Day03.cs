@@ -27,10 +27,8 @@ namespace AdventOfCode2021
         public static void Part2()
         {
             var inputs = File.ReadAllLines("Inputs/day03.txt").ToList();
-
             var oxygenList = inputs.Where(x => 1 == 1).ToList();
             var co2List = inputs.Where(x => 1 == 1).ToList();
-
             for (int i = 0; i < inputs[0].Length; i++)
             {
                 if (oxygenList.Count != 1)
@@ -38,10 +36,7 @@ namespace AdventOfCode2021
                     var oxygen_occurenses_0 = oxygenList.Count(str => str[i] == '0');
                     var oxygen_occurenses_1 = oxygenList.Count(str => str[i] == '1');
                     var oxygenBitToRemove = '0';
-                    if (oxygen_occurenses_0 != oxygen_occurenses_1)
-                    {
-                        oxygenBitToRemove = oxygen_occurenses_1 > oxygen_occurenses_0 ? '0' : '1';
-                    }
+                    if (oxygen_occurenses_0 != oxygen_occurenses_1) oxygenBitToRemove = oxygen_occurenses_1 > oxygen_occurenses_0 ? '0' : '1';
                      oxygenList.RemoveAll(str => str[i] == oxygenBitToRemove);
                 }
                 if (co2List.Count != 1)
@@ -49,10 +44,7 @@ namespace AdventOfCode2021
                     var co2_occurenses_0 = co2List.Count(str => str[i] == '0');
                     var co2_occurenses_1 = co2List.Count(str => str[i] == '1');
                     var co2BitToRemove = '1';
-                    if (co2_occurenses_0 != co2_occurenses_1)
-                    {
-                        co2BitToRemove = co2_occurenses_1 < co2_occurenses_0 ? '0' : '1';
-                    }
+                    if (co2_occurenses_0 != co2_occurenses_1) co2BitToRemove = co2_occurenses_1 < co2_occurenses_0 ? '0' : '1';
                     co2List.RemoveAll(str => str[i] == co2BitToRemove);
                 }
             }
