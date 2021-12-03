@@ -6,6 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Update="Inputs\day03.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Inputs\day02.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
