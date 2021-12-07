@@ -12,12 +12,9 @@ namespace AdventOfCode2021
     {
         public static void Part1()
         {
-            var inputs = File.ReadAllLines("Inputs/day07.txt").ToList();
-            var positions = inputs[0].Split(",").Select(x => int.Parse(x)).ToList();
-            var max = positions.Max();
-            var min = positions.Min();
+            var positions = File.ReadAllLines("Inputs/day07.txt").ToList()[0].Split(",").Select(x => int.Parse(x)).ToList();
             var lowestFuelCost = long.MaxValue;
-            for (int i = min; i <= max; i++)
+            for (int i = positions.Min(); i <= positions.Max(); i++)
             {
                 long totalFuelCost = 0;
                 foreach (var position in positions) totalFuelCost += Math.Abs(i - position);
@@ -27,12 +24,9 @@ namespace AdventOfCode2021
         }
         public static void Part2()
         {
-            var inputs = File.ReadAllLines("Inputs/day07.txt").ToList();
-            var positions = inputs[0].Split(",").Select(x => int.Parse(x)).ToList();
-            var max = positions.Max();
-            var min = positions.Min();
+            var positions = File.ReadAllLines("Inputs/day07.txt").ToList()[0].Split(",").Select(x => int.Parse(x)).ToList();
             var lowestFuelCost = long.MaxValue;
-            for (int i = min; i <= max; i++)
+            for (int i = positions.Min(); i <= positions.Max(); i++)
             {
                 long totalFuelCost = 0;
                 foreach (var position in positions)
