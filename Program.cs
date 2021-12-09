@@ -12,14 +12,14 @@ namespace AdventOfCode2021
             Stopwatch sw = new Stopwatch();
             sw.Start();
 
-            Day08.Part1();
+            Day09.Part1();
 
             sw.Stop();
             Console.WriteLine($"Timing: {sw.Elapsed}");
             sw.Reset();
             sw.Start();
 
-            Day08.Part2();
+            Day09.Part2();
 
             sw.Stop();
             Console.WriteLine($"Timing: {sw.Elapsed}");
