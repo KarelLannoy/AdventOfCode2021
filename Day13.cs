@@ -73,7 +73,7 @@ namespace AdventOfCode2021
                 for (int x = 0; x <= dots.Max(d => d.X); x++)
                 {
                     if (dots.Contains(new Point(x, y))) Console.Write("█");
-                    else Console.Write("░");
+                    else Console.Write(" ");
                 }
                 Console.WriteLine();
             }
