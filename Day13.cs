@@ -39,18 +39,10 @@ namespace AdventOfCode2021
             dots = dots.Distinct().ToList();
             Console.WriteLine(dots.Count);
         }
-
-        private class Instruction
-        {
-            public string Axis { get; set; }
-            public int Position { get; set; }
-        }
-
         public static void Part2()
         {
             var dots = File.ReadAllLines("Inputs/day13.txt").Where(x => x != "" && char.IsNumber(x[0])).Select(dot => new Point(int.Parse(dot.Split(",")[0]), int.Parse(dot.Split(",")[1]))).ToList();
             var foldInstrucions = File.ReadAllLines("Inputs/day13.txt").Where(x => x.StartsWith("fold along")).Select(inst => new Instruction() { Axis = inst.Substring(11).Split("=")[0], Position = int.Parse(inst.Substring(11).Split("=")[1]) }).ToList();
-
             foreach (var instruction in foldInstrucions)
             {
                 switch (instruction.Axis)
@@ -76,23 +68,20 @@ namespace AdventOfCode2021
                 }
                 dots = dots.Distinct().ToList();
             }
-
             for (int y = 0; y <= dots.Max(d => d.Y); y++)
             {
                 for (int x = 0; x <= dots.Max(d => d.X); x++)
                 {
-
-                    if (dots.Contains(new Point(x, y)))
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write("#");
-                    }
-                    else Console.Write(" ");
-                    Console.ForegroundColor = ConsoleColor.White;
+                    if (dots.Contains(new Point(x, y))) Console.Write("█");
+                    else Console.Write("░");
                 }
                 Console.WriteLine();
             }
         }
-
+        private class Instruction
+        {
+            public string Axis { get; set; }
+            public int Position { get; set; }
+        }
     }
 }
